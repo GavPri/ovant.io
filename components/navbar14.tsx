@@ -73,6 +73,7 @@ const Navbar14 = ({ className }: Navbar14Props) => {
               className="flex size-10 items-center justify-center rounded-md border"
               onClick={() => setIsOpen(!isOpen)}
               aria-label="Toggle menu"
+              aria-expanded={isOpen}
             >
               <div className="flex w-3.5 flex-col gap-1">
                 <span

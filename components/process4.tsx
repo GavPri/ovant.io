@@ -1,10 +1,12 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
+import Image from "next/image";
 import React, { useState } from "react";
 
-import { useGoogleFont } from "@/hooks/use-google-font";
 import { cn } from "@/lib/utils";
+
+const MotionImage = motion.create(Image);
 
 interface Process4Props {
   className?: string;
@@ -16,28 +18,26 @@ const Process4 = ({ className }: Process4Props) => {
       title: "Tell us about your business",
       description:
         "Hop on a 30 minute call to tell us about your business.",
-      image:
-        "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/guri4/img14.png",
+      image: "/process-1.png",
+      alt: "A 30-minute discovery call to discuss your business",
     },
     {
       title: "We design & build",
       description:
         "Your site is crafted in Next.js, optimised for performance from day one.",
-      image:
-        "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/guri4/img10.png",
+      image: "/process-2.png",
+      alt: "Designing and building your website in Next.js",
     },
     {
       title: "You go live, ready to grow",
       description:
         "Website crafted for performance with analytics, forms, and everything configured.",
-      image:
-        "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/guri4/img11.png",
+      image: "/process-3.png",
+      alt: "Your finished website live and ready for business",
     },
   ];
 
   const [active, setActive] = useState<number | null>(0);
-
-  useGoogleFont("Antonio");
 
   return (
     <section
@@ -45,20 +45,20 @@ const Process4 = ({ className }: Process4Props) => {
       className={cn("bg-background py-12 mx-auto bg-secondary px-6", className)}
       style={
         {
-          "--font-mono": "Antonio",
+          "--font-mono": "var(--font-antonio)",
         } as React.CSSProperties
       }
     >
       <div className="container mx-auto">
         <div className="grid grid-cols-1 gap-5 lg:grid-cols-6 lg:gap-20">
           <div className="top-10 col-span-2 h-fit w-fit gap-3 space-y-7 py-8 lg:sticky">
-            <h1 className="text-5xl mt-10 font-semibold tracking-tight lg:text-7xl">
+            <h2 className="text-5xl mt-10 font-semibold tracking-tight lg:text-7xl">
               {" "}
               Process
               <sup className="align-top font-mono text-lg tracking-tight text-foreground/40">
                 0003
               </sup>{" "}
-            </h1>
+            </h2>
             <p className="text-base text-foreground/90">
               Three simple steps — from brief to live site, with everything
               configured and ready for real business.
@@ -76,22 +76,24 @@ const Process4 = ({ className }: Process4Props) => {
               >
                 <AnimatePresence mode="wait">
                   {index === active && (
-                    <motion.img
+                    <MotionImage
                       key={step.image}
                       initial={{ opacity: 0, y: -10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
                       transition={{ duration: 0.3 }}
                       src={step.image}
-                      alt=""
+                      alt={step.alt}
+                      width={160}
+                      height={160}
                       className="absolute top-0 right-0 size-30 translate-x-1/4 -translate-y-1/2 rounded-2xl object-cover lg:size-40 lg:translate-x-1/2"
                     />
                   )}
                 </AnimatePresence>
                 <div className="">
-                  <h2 className="mb-4 font-bold tracking-tight lg:text-3xl">
+                  <p className="mb-4 font-bold tracking-tight lg:text-3xl">
                     Step {index + 1}
-                  </h2>
+                  </p>
                   <h3 className="mb-4 text-2xl font-semibold tracking-tighter lg:text-xl">
                     {step.title}
                   </h3>

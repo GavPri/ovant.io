@@ -41,7 +41,7 @@ const Card = ({ icon: Icon, title, description, className, iconClassName, accent
     </div>
 
     <div>
-      <h2 className="mb-2 text-xl font-semibold tracking-tight">{title}</h2>
+      <h3 className="mb-2 text-xl font-semibold tracking-tight">{title}</h3>
       <p className="text-sm leading-relaxed text-muted-foreground">{description}</p>
     </div>
 
@@ -56,7 +56,7 @@ const Feature101 = ({ className }: Feature101Props) => {
     <section id="whats-included" className={cn("py-32 px-4", className)}>
       <div className="container mx-auto">
         <div className="mx-auto flex flex-col justify-center gap-4 text-center">
-          <h1 className="text-4xl font-bold md:text-5xl">What&apos;s Included</h1>
+          <h2 className="text-4xl font-bold md:text-5xl">What&apos;s Included</h2>
           <p className="text-xl text-muted-foreground">
             Every Ovant.io package ships with everything your business needs — no extras, no surprises.
           </p>

@@ -28,43 +28,46 @@ const BookADemo3 = ({ className }: BookADemo3Props) => {
       <div className="container mx-auto">
         <div className="grid grid-cols-1 gap-16 lg:grid-cols-2 lg:gap-10">
           <div className="flex max-w-lg flex-col gap-5">
-            <h3 className="text-3xl font-medium md:text-4xl">
+            <h2 className="text-3xl font-medium md:text-4xl">
               Ready to get started?
-            </h3>
+            </h2>
             <p className="text-base font-light text-foreground md:text-lg">
-              Tell us a little about your business and we'll get back to you within 24 hours.
+              Tell us a little about your business and we&apos;ll get back to you within 24 hours.
             </p>
           </div>
           <Card className="overflow-hidden bg-muted/70 px-6 py-8">
             <form className="flex flex-col gap-6">
               <FormGroup>
-                <Label>Name</Label>
+                <Label htmlFor="name">Name</Label>
                 <Input
+                  id="name"
                   type="text"
                   placeholder="Jane Smith"
                   className="bg-background"
                 />
               </FormGroup>
               <FormGroup>
-                <Label>Business Name</Label>
+                <Label htmlFor="business-name">Business Name</Label>
                 <Input
+                  id="business-name"
                   type="text"
                   placeholder="Smith & Co."
                   className="bg-background"
                 />
               </FormGroup>
               <FormGroup>
-                <Label>Email</Label>
+                <Label htmlFor="email">Email</Label>
                 <Input
+                  id="email"
                   type="email"
                   placeholder="jane@smithandco.com"
                   className="bg-background"
                 />
               </FormGroup>
               <FormGroup>
-                <Label>Package Interest</Label>
+                <Label htmlFor="package">Package Interest</Label>
                 <Select>
-                  <SelectTrigger className="w-full bg-background">
+                  <SelectTrigger id="package" className="w-full bg-background">
                     <SelectValue placeholder="Select a package..." />
                   </SelectTrigger>
                   <SelectContent className="w-full">
@@ -76,8 +79,9 @@ const BookADemo3 = ({ className }: BookADemo3Props) => {
                 </Select>
               </FormGroup>
               <FormGroup>
-                <Label>Message</Label>
+                <Label htmlFor="message">Message</Label>
                 <Textarea
+                  id="message"
                   placeholder="Tell us about your business..."
                   className="bg-background min-h-28"
                 />

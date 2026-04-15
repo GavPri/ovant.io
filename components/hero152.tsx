@@ -49,7 +49,7 @@ const Hero152 = ({ className }: Hero152Props) => {
             </motion.div>
           </div>
         </div>
-        <div className="relative mt-16 aspect-[1.2/1] overflow-hidden sm:-right-[10%] sm:right-auto sm:mt-28 sm:aspect-[2.788990826/1]">
+        <div className="relative mt-16 aspect-[1.2/1] overflow-hidden sm:-right-[10%] sm:left-auto sm:mt-28 sm:aspect-[2.788990826/1]">
           <motion.div
             className="absolute top-[11%] left-[2%] z-10 aspect-[0.7/1] w-[55%] sm:left-[2%] sm:w-[32%]"
             initial={{ opacity: 0, y: 32 }}
@@ -62,7 +62,9 @@ const Hero152 = ({ className }: Hero152Props) => {
                   src="/hero-1.jpg"
                   alt="Website example"
                   fill
-                  className="object-fit object-center"
+                  priority
+                  sizes="(max-width: 640px) 55vw, 32vw"
+                  className="object-cover object-center"
                 />
               </div>
             </div>
@@ -79,7 +81,8 @@ const Hero152 = ({ className }: Hero152Props) => {
                   src="/hero-2.jpg"
                   alt="Website example"
                   fill
-                  className="object-fit object-center"
+                  sizes="(max-width: 640px) 52vw, 28vw"
+                  className="object-cover object-center"
                 />
               </div>
             </div>
@@ -96,7 +99,8 @@ const Hero152 = ({ className }: Hero152Props) => {
                   src="/hero-3.jpg"
                   alt="Website example"
                   fill
-                  className="object-fit object-center"
+                  sizes="(max-width: 640px) 60vw, 36vw"
+                  className="object-cover object-center"
                 />
               </div>
             </div>
